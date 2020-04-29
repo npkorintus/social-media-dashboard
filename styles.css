@@ -1,0 +1,380 @@
+:root {
+  /* Primary colors */
+  --color-lime-green: hsl(163, 72%, 41%);
+  --color-bright-red: hsl(356, 69%, 56%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-facebook: hsl(195, 100%, 50%);
+  --color-twitter: hsl(203, 89%, 53%);
+  --color-instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --color-youtube: hsl(348, 97%, 39%);
+
+  /* Dark Theme */
+  --color-dark-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  /* Light Theme */
+  --color-light-toggle: hsl(230, 22%, 74%);
+
+  /* Dark Theme Colors */
+  --color-very-dark-blue-bg: hsl(230, 17%, 14%);
+  --color-very-dark-blue-top-bg: hsl(232, 19%, 15%);
+  --color-dark-desaturated-blue: hsl(228, 28%, 20%);
+  --color-desaturated-blue: hsl(228, 34%, 66%);
+
+  /* Light Theme Colors */
+  --color-very-pale-blue-top-bg: hsl(225, 100%, 98%);
+  --color-light-grayish-blue-card-bg: hsl(227, 47%, 96%);
+  --color-dark-grayish-blue-text: hsl(228, 12%, 44%);
+  --color-very-dark-blue-text: hsl(230, 17%, 14%);
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-very-dark-blue-bg);
+  color: var(--color-white);
+}
+
+.container {
+  margin: 0 20px;
+}
+
+.grid-layout {
+  padding-bottom: 16px;
+  display: grid;
+  grid-template-columns: 336px;
+  grid-gap: 20px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.flex-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.bottom {
+  align-items: baseline;
+}
+
+header {
+  background-color: var(--color-very-dark-blue-top-bg);
+  padding-bottom: 80px;
+  font-weight: 700;
+  padding: 32px 20px 48px;
+  border-radius: 0 0 20px 20px;
+}
+
+.heading {
+  margin-bottom: 32px;
+}
+
+.theme-switcher {
+  border-top: 1px solid var(--color-desaturated-blue);
+  padding: 32px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-dark-toggle);
+  transition: transform 150ms ease-in-out;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-very-dark-blue-top-bg);
+}
+
+input:checked + .slider {
+  background: var(--color-light-toggle);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background: var(--color-white);
+}
+
+input:checked + .slider:hover {
+  background: var(--color-dark-toggle);
+  color: var(--color-white);
+}
+
+.slider:hover + .blue-text {
+  color: var(--color-white);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.card {
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 4px;
+  width: 336px;
+  text-align: center;
+  background-color:  var(--color-dark-desaturated-blue);
+  position: relative;
+}
+
+.facebook::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-facebook);
+}
+
+.twitter::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-twitter);
+}
+
+.instagram::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-instagram);
+}
+
+.youtube::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-youtube);
+}
+
+.small-card {
+  border-radius: 4px;
+  text-align: center;
+  padding: 24px;
+  width: 336px;
+  background-color:  var(--color-dark-desaturated-blue);
+}
+
+.card:hover, div .small-card:hover {
+  background-color: hsl(230, 27%, 29%);
+  cursor: pointer;
+}
+
+#overview {
+  margin-bottom: 24px;
+}
+
+.handle {
+  padding-left: 8px;
+  color: var(--color-desaturated-blue);
+}
+
+.followers {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--color-desaturated-blue);
+  margin: 0 0 24px 0;
+}
+
+.arrow {
+  margin-right: 4px;
+}
+
+.increase {
+  color: var(--color-lime-green);
+}
+
+.decrease {
+  color:var(--color-bright-red);
+}
+
+.overview-card-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-desaturated-blue);
+  margin: 0;
+}
+
+.blue-text {
+  color: var(--color-desaturated-blue);
+}
+
+.toggle-label, #total-followers {
+  color: var(--color-desaturated-blue);
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.card h1, .small-card h2 {
+  margin-top: 24px;
+}
+
+main {
+  margin-top: -48px;
+}
+
+small {
+  font-weight: 700;
+}
+
+footer {
+  margin: 16px 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+/* Light mode theme */
+.light-mode {
+  background-color: var(--color-light-grayish-blue-card-bg);
+}
+
+.light-mode:hover, div .light-mode:hover {
+  background-color: hsl(232, 33%, 91%);
+}
+
+.light-mode-bg {
+  background-color: var(--color-white);
+}
+
+.light-mode-header {
+  background-color: var(--color-very-pale-blue-top-bg);
+}
+
+.black-text {
+  color: black;
+}
+
+.dark-blue-text {
+  color: var(--color-very-dark-blue-text);
+}
+
+.dark-gray-blue-text {
+  color: var(--color-dark-grayish-blue-text);
+}
+
+
+/* Desktop layout */
+@media (min-width: 1075px) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 100px 120px;
+
+  }
+
+  .heading {
+    margin: 0;
+  }
+
+  .theme-switcher {
+    border: none;
+  }
+
+  .switch {
+    margin-left: 16px;
+  }
+
+  main {
+    margin-top: -100px;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 24px;
+    padding-bottom: 16px;
+  }
+
+  .container {
+    margin: 0 100px;
+  }
+
+  .card {
+    width: 252px;
+  }
+
+  .small-card {
+    width: 252px;
+  }
+}
